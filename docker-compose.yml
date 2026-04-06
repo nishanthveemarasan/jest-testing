@@ -1,0 +1,48 @@
+version: '3.8'
+services:
+  jest_testing:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: jest_testing
+    container_name: jest_testing
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "127.0.0.1:${APP_PORT:-3800}:3000"
+    volumes:
+      - ./:/usr/src/app
+    networks:
+      - app-network
+      - shared-network # Connect to shared-network for external communication
+
+  # mongo-express:
+  #   image: mongo-express
+  #   container_name: mongo_express
+  #   restart: unless-stopped
+  #   ports:
+  #     - "8081:8081"
+  #   environment:
+  #     # 1. Use the FULL connection string for Replica Sets
+  #     - ME_CONFIG_MONGODB_URL=mongodb://root:secret@mongodb:27017/?authSource=admin&replicaSet=rs0&directConnection=true
+  #     # 2. Add these to ensure it handles the admin DB correctly
+  #     - ME_CONFIG_MONGODB_ENABLE_ADMIN=true
+  #     - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+  #     - ME_CONFIG_MONGODB_ADMINPASSWORD=secret
+  #     # 3. Optional: Basic auth for the web UI (user: admin, pass: pass)
+  #     - ME_CONFIG_BASICAUTH_USERNAME=admin
+  #     - ME_CONFIG_BASICAUTH_PASSWORD=pass
+  #   depends_on:
+  #     mongodb:
+  #       condition: service_healthy
+  #   networks:
+  #     - app-network
+
+# volumes:
+#   mongo_data:
+#   mysql_data:
+networks:
+  app-network:
+    driver: bridge # Internal network for communication within the Docker Compose project
+  shared-network:
+    external: true # External network to communicate with services outside the Docker Compose project
