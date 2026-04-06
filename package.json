@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/nishanthveemarasan/jest-testing#readme",
+  "bugs": {
+    "url": "https://github.com/nishanthveemarasan/jest-testing/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nishanthveemarasan/jest-testing.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "jest": "^30.3.0",
+    "ts-jest": "^29.4.9",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.2"
+  }
+}
