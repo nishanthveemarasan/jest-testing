@@ -1,5 +1,5 @@
 /* istanbul ignore file */
-import { Server } from "./server/Server";
+import { Server } from "./server/Server.ts";
 class Launcher {
 
     private server = new Server();

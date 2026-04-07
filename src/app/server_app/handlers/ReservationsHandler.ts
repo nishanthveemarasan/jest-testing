@@ -1,9 +1,9 @@
 import { IncomingMessage, ServerResponse } from "http";
-import { Authorizer } from "../auth/Authorizer";
-import { ReservationsDataAccess } from "../data/ReservationsDataAccess";
-import { Reservation } from "../model/ReservationModel";
-import { HTTP_CODES, HTTP_METHODS } from "../model/ServerModel";
-import { getRequestBody } from "../utils/Utils";
+import { Authorizer } from "../auth/Authorizer.ts";
+import { ReservationsDataAccess } from "../data/ReservationsDataAccess.ts";
+import type { Reservation } from "../model/ReservationModel.ts";
+import { HTTP_CODES, HTTP_METHODS } from "../model/ServerModel.ts";
+import { getRequestBody } from "../utils/Utils.ts";
 
 
 

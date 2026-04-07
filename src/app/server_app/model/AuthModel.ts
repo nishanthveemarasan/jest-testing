@@ -1,10 +1,10 @@
-export type Account = {
+export interface Account {
     id: string,
     userName: string,
     password: string,
 }
 
-export type SessionToken = {
+export interface SessionToken {
     id: string,
     userName: string,
     valid: boolean,

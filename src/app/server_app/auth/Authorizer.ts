@@ -1,7 +1,7 @@
-import { SessionTokenDataAccess } from "../data/SessionTokenDataAccess";
-import { UserCredentialsDataAccess } from "../data/UserCredentialsDataAccess";
-import { ITokenValidator } from "./ITokenValidator";
-import { IUsersHandler } from "./IUsersHandler";
+import { SessionTokenDataAccess } from "../data/SessionTokenDataAccess.ts";
+import { UserCredentialsDataAccess } from "../data/UserCredentialsDataAccess.ts";
+import type { ITokenValidator } from "./ITokenValidator.ts";
+import type { IUsersHandler } from "./IUsersHandler.ts";
 
 
 export class Authorizer implements IUsersHandler, ITokenValidator {
