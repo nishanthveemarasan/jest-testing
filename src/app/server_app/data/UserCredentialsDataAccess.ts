@@ -6,6 +6,7 @@ export class UserCredentialsDataAccess {
     private userCredentialsDataBase = new DataBase<Account>();
 
     public async addUser(user: Account) {
+      console.log('Adding user:', user);
       const accountId = await this.userCredentialsDataBase.insert(user);
        return accountId;
     }
