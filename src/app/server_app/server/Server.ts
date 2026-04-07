@@ -19,7 +19,7 @@ export class Server {
             await this.handleRequest(req, res);
             res.end();
         });
-        this.server.listen(8080);
+        this.server.listen(3000);
         console.log('server started')
     }
 
