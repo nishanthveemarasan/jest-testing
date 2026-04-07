@@ -1,6 +1,8 @@
 import type { Config } from '@jest/types';
 
-const baseDir= '<rootDir>/src/**/*.{ts,tsx}'
+// const baseDir= '<rootDir>/src/**/*.{ts,tsx}'
+const baseDir = '<rootDir>/src/app/pass_checker';
+const baseTestDir = '<rootDir>/src/test/pass_checker';
 
 const config: Config.InitialOptions = {
   preset: 'ts-jest',
@@ -8,13 +10,11 @@ const config: Config.InitialOptions = {
   testEnvironment: 'node',
   collectCoverage: true,
   collectCoverageFrom:[
-    '<rootDir>/src/**/*.{ts,tsx}',
-  ]
-  
-  // testMatch: ['**/__tests__/**/*.ts?(x)', '**/?(*.)+(spec|test).ts?(x)'],
-  // transform: {
-  //   '^.+\\.tsx?$': 'ts-jest',
-  // },
+    `${baseDir}/**/*.{ts,tsx}`,
+  ],
+  testMatch: [
+    `${baseTestDir}/**/*.{spec,test}.{ts,tsx}`,
+  ],
 };
 
 export default config;
